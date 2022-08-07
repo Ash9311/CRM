@@ -1,3 +1,12 @@
 <h1 class="c1">{{title}}</h1>
-
+<div style="background-color:aquamarine" *ngIf="success_msg; then updated_msg; else error_msg">user added successfully</div>
+<ng-template #updated_msg>user updated successfully  </ng-template>
+<ng-template #error_msg>user was not added</ng-template>
+<ul>
+    <li *ngFor="let contact of contacts;first as f;last as l;even as e">
+        <div *ngIf="f || l ">
+          {{contact.name}}{{" "}}{{contact.age}}        
+        </div>
+    </li>
+</ul>
 <router-outlet></router-outlet>

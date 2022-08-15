@@ -1,5 +1,77 @@
-<h1 class="c1">{{title}}</h1>
-<div style="background-color:aquamarine" *ngIf="success_msg; then updated_msg; else error_msg">user added successfully</div>
+ 
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1 class="c1">{{title}}</h1>
+<img [src]="imgUrl" [alt]="imgAlt" />
+<p [style.color]="txtcolorval">Page count value is {{pagecount}}</p>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr *ngFor="let contact of contacts">
+      <td [title]="contact.id">{{contact.id}}</td>
+      <td [title]="contact.name">{{contact.name}}</td>
+      <td [title]="contact.age">{{contact.age}}</td>
+  </tr>
+</table>
+<div [innerHTML]="contacts"></div>
+<table>
+  <tr>
+    <td [attr.colspan]="colval">Id</td>
+    <td>Name</td>
+    <td>Age</td>
+  </tr>
+  </table>
+
+  <button (click)="sayHello()"></button>
+  <div (mouseover)="highlightBGcolor(1)">Highlight me please</div>
+
+<input [(ngModel)]="username" />
+<h3>{{username}}</h3>
+built in pipe -->
+<!-- <div>
+{{lowerCaseExample | lowercase}}
+</div>
+<p>{{dateExample | date}}</p>
+<p>{{jsonEx | json}}</p>
+<p>{{currencyEx | currency: 'INR'}}</p> -->
+
+<!-- parameterizing pipes -->
+<!-- <div style="background-color:aquamarine" *ngIf="success_msg; then updated_msg; else error_msg">user added successfully</div>
 <ng-template #updated_msg>user updated successfully  </ng-template>
 <ng-template #error_msg>user was not added</ng-template>
 <ul>
@@ -9,4 +81,19 @@
         </div>
     </li>
 </ul>
-<router-outlet></router-outlet>
+<div [ngSwitch]="superpower">
+  <div *ngSwitchCase="'expression'">swing</div>
+  <div *ngSwitchCase="'spiderman'">web</div>
+  <div *ngSwitchDefault>output2</div>
+</div>
+
+<div [ngSwitch]="tax">
+  <div *ngSwitchCase="10">pay 15% of income</div>
+  <div *ngSwitch="20">pay 25% of income</div>
+  <div *ngSwitchDefault>free</div>
+</div>
+<div [ngStyle]="{'background-color':styleprop,'color':txtcolor}">variable color</div>
+<div [ngStyle]="{'background-color': txtcolor === 'blue'?'blue':'black','color':'white'}">conditional color</div>
+<div [ngClass]="conditionalClassprop==='c4' ? 'c4' : 'c1'">conditionalClassprop</div>
+<div [ngClass]="solve()">method</div>
+ -->

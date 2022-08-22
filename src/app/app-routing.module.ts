@@ -1,3 +1,4 @@
+import { ProductComponent } from './product/product.component';
 import { AddLoansComponent } from './add-loans/add-loans.component';
 import { LoanTypesComponent } from './loan-types/loan-types.component';
 import { NgModule } from '@angular/core';
@@ -6,17 +7,27 @@ import { LoansComponent } from './loans/loans.component';
 
 const routes: Routes = [
   {
-  path: 'loans',
-  component: LoansComponent
+  path: 'loans-types',
+  component: LoanTypesComponent,
+ 
+  children:[
+    {
+      path: 'add-loan',component: AddLoansComponent
+    }
+  ]
 },
 {
-  path: 'loans/add-loan',
-  component: AddLoansComponent
-},
-{
-  path: 'loan-types',
-  component: LoanTypesComponent
+  path: 'add',
+  redirectTo: 'loans-types'
+  
+},{
+  path: 'product/:id',
+  component: ProductComponent
+},{
+  path: 'product/:productId/photos/:photoId',
+  component: ProductComponent
 }
+
 ];
 
 @NgModule({

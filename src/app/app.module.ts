@@ -8,7 +8,8 @@ import { HighlightDirective } from './highlight.directive';
 import { LoansComponent } from './loans/loans.component';
 import { LoanTypesComponent } from './loan-types/loan-types.component';
 import { AddLoansComponent } from './add-loans/add-loans.component';
-
+ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ProductComponent } from './product/product.component'; 
   
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AddLoansComponent } from './add-loans/add-loans.component';
     LoansComponent,
     LoanTypesComponent,
     AddLoansComponent,
+    ProductComponent,
 
   
   ],
@@ -25,7 +27,9 @@ import { AddLoansComponent } from './add-loans/add-loans.component';
     AppRoutingModule ,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

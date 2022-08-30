@@ -9,7 +9,8 @@ import { LoansComponent } from './loans/loans.component';
 import { LoanTypesComponent } from './loan-types/loan-types.component';
 import { AddLoansComponent } from './add-loans/add-loans.component';
  import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { ProductComponent } from './product/product.component'; 
+import { ProductComponent } from './product/product.component';
+import { ClientsComponent } from './clients/clients.component'; 
   
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ProductComponent } from './product/product.component';
     LoanTypesComponent,
     AddLoansComponent,
     ProductComponent,
+    ClientsComponent,
 
   
   ],

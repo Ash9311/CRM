@@ -1,3 +1,4 @@
+import { SearchComponent } from './search/search.component';
 import { LeadsGridComponent } from './leads/leads-listing/leads-grid/leads-grid.component';
 import { ClientsComponent } from './clients/clients.component';
 import { ProductComponent } from './product/product.component';
@@ -43,6 +44,10 @@ const routes: Routes = [
 },{
   path: 'clients',
   component: ClientsComponent
+},
+{
+  path:'search',
+  component: SearchComponent
 }
 
 ];

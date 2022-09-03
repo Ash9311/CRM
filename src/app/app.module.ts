@@ -11,7 +11,8 @@ import { AddLoansComponent } from './add-loans/add-loans.component';
  import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ProductComponent } from './product/product.component';
 import { ClientsComponent } from './clients/clients.component';
-import { SearchComponent } from './search/search.component'; 
+import { SearchComponent } from './search/search.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'; 
   
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SearchComponent } from './search/search.component';
     ProductComponent,
     ClientsComponent,
     SearchComponent,
+    PageNotFoundComponent,
 
   
   ],

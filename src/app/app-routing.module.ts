@@ -50,6 +50,7 @@ const routes: Routes = [
   path:'search',
   component: SearchComponent
 },
+  { path: 'payments', loadChildren: () => import('./payments/payments.module').then(m => m.PaymentsModule) },
 { 
   path: '**',
   component: PageNotFoundComponent 

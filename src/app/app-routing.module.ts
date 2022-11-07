@@ -1,3 +1,5 @@
+import { AdminGuard } from './admin.guard';
+import { AuthGuard } from './auth.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchComponent } from './search/search.component';
 import { LeadsGridComponent } from './leads/leads-listing/leads-grid/leads-grid.component';
@@ -36,7 +38,8 @@ const routes: Routes = [
 },
 {
   path: 'leads',
-  component: LeadsGridComponent
+  component: LeadsGridComponent,
+  canActivate: [AdminGuard]
   
 },
 {
@@ -44,7 +47,8 @@ const routes: Routes = [
   component: ProductComponent
 },{
   path: 'clients',
-  component: ClientsComponent
+  component: ClientsComponent,
+  canActivate: [AuthGuard]
 },
 {
   path:'search',

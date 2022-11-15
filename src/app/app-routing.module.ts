@@ -1,3 +1,8 @@
+import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
+import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { AdminManageComponent } from './admin-manage/admin-manage.component';
+import { AdminAccessGuard } from './admin-access.guard';
+import { AdminComponent } from './admin/admin.component';
 import { AdminGuard } from './admin.guard';
 import { AuthGuard } from './auth.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -11,6 +16,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoansComponent } from './loans/loans.component';
 import { leadingComment } from '@angular/compiler';
+import { SuperAdminGuard } from './super-admin.guard';
 
 const routes: Routes = [
   {
@@ -40,6 +46,26 @@ const routes: Routes = [
   path: 'leads',
   component: LeadsGridComponent,
   canActivate: [AdminGuard]
+  
+},
+{
+  path: 'admin',
+  canActivate: [SuperAdminGuard],
+  children: [
+    {
+      path:'',
+      component: AdminComponent
+    },
+    {
+      path:'',
+      canActivateChild: [AdminAccessGuard],
+      children: [
+        {path:'manage',component: AdminManageComponent},
+        {path:'edit',component: AdminEditComponent},
+        {path:'delete',component: AdminDeleteComponent}
+      ]
+    }
+  ]
   
 },
 {

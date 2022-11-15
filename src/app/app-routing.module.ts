@@ -1,3 +1,4 @@
+import { PreferencesCheckGuard } from './preferences-check.guard';
 import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { AdminManageComponent } from './admin-manage/admin-manage.component';
@@ -81,6 +82,9 @@ const routes: Routes = [
   component: SearchComponent
 },
   { path: 'payments', loadChildren: () => import('./payments/payments.module').then(m => m.PaymentsModule) },
+  { path: 'preferences',
+  canLoad: [PreferencesCheckGuard],
+   loadChildren: () => import('./preferences/preferences.module').then(m => m.PreferencesModule) },
 { 
   path: '**',
   component: PageNotFoundComponent 

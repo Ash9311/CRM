@@ -1,3 +1,4 @@
+import { UnsavedGuard } from './unsaved.guard';
 import { PreferencesCheckGuard } from './preferences-check.guard';
 import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
@@ -29,6 +30,11 @@ const routes: Routes = [
       path: 'add-loan',component: AddLoansComponent
     }
   ]
+},
+{
+  path: 'search',
+  component: SearchComponent,
+  canDeactivate: [UnsavedGuard]
 },
 {
   path: 'add',

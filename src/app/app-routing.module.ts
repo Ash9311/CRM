@@ -1,3 +1,4 @@
+import { AccountInfoGuard } from './account-info.guard';
 import { UnsavedGuard } from './unsaved.guard';
 import { PreferencesCheckGuard } from './preferences-check.guard';
 import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   path: 'loans-types',
   component: LoanTypesComponent,
  
+ 
   children:[
     {
       path: 'add-loan',component: AddLoansComponent
@@ -49,10 +51,14 @@ const routes: Routes = [
   redirectTo: 'leads',
   pathMatch: 'full'
 },
+  //resolve data is loaded before route is activated
 {
   path: 'leads',
   component: LeadsGridComponent,
-  canActivate: [AdminGuard]
+  canActivate: [AdminGuard],
+  resolve: {
+    data : AccountInfoGuard
+  }
   
 },
 {
@@ -77,15 +83,18 @@ const routes: Routes = [
 },
 {
   path: 'product/:productId/photos/:photoId',
-  component: ProductComponent
+  component: ProductComponent,
+ 
 },{
   path: 'clients',
   component: ClientsComponent,
   canActivate: [AuthGuard]
 },
 {
+
   path:'search',
-  component: SearchComponent
+  component: SearchComponent,
+ 
 },
   { path: 'payments', loadChildren: () => import('./payments/payments.module').then(m => m.PaymentsModule) },
   { path: 'preferences',

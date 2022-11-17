@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./leads-grid.component.css']
 })
 export class LeadsGridComponent implements OnInit {
+  activatedRoute: any;
 
-  constructor() { }
+  constructor(private ActivatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.ActivatedRoute.snapshot.data);
+    
   }
 
 }

@@ -1,1 +1,11 @@
-<p>admin works!</p>
+<form #addCustomerForm="ngForm" (submit)="addCustomer(addCustomerForm)" action="">
+<input type="text" [(ngModel)]="firstname" name="firstname">
+<p>{{firstname}}</p>
+<input type="checkbox" [(ngModel)]="terms" name="terms">
+<br>
+<select [(ngModel)]="customerType" name="customerType" id="">
+    <option value="1">Premium</option>
+    <option value="2">Supreme</option>
+</select>
+<button type="submit">Add Customer</button>
+</form>

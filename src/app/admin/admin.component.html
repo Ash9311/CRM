@@ -1,11 +1,11 @@
-<form #addCustomerForm="ngForm" (submit)="addCustomer(addCustomerForm)" action="">
-<input type="text" [(ngModel)]="firstname" name="firstname">
+<form #addCustomerForm="ngForm" (submit)="addCustomer(addCustomerForm)" action="" > 
+<input type="text" [(ngModel)]="firstname" name="firstname" required minlength="6">
 <p>{{firstname}}</p>
-<input type="checkbox" [(ngModel)]="terms" name="terms">
+<input type="checkbox" [(ngModel)]="terms" name="terms" required>
 <br>
 <select [(ngModel)]="customerType" name="customerType" id="">
     <option value="1">Premium</option>
     <option value="2">Supreme</option>
 </select>
-<button type="submit">Add Customer</button>
+<button type="submit" [disabled]="!addCustomerForm.valid">Add Customer</button>
 </form>

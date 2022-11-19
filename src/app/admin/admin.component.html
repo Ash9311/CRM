@@ -8,4 +8,5 @@
     <option value="2">Supreme</option>
 </select>
 <button type="submit" [disabled]="!addCustomerForm.valid">Add Customer</button>
+<button type="reset" class="btn btn-link" (click)="resetForm(addCustomerForm)">Reset</button>
 </form>

@@ -16,6 +16,10 @@ export class AdminComponent implements OnInit {
     console.log(formValue.value);
   }
 
+  resetForm(formValue: NgForm){
+    formValue.reset();
+  }
+
   ngOnInit(): void {
   }
 

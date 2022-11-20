@@ -7,10 +7,11 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  firstname:string = "";
+  firstname:string = "a";
+  
  terms: boolean = false;
   constructor() { }
-
+description: string = "d";
   customerType: string = "standard";
   addCustomer(formValue: NgForm){
     console.log(formValue.value);
@@ -21,6 +22,17 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
+    
 
+  }
+  setFormValue(formValue: NgForm){
+    let userDetails = {
+      firstname: 'Ash',
+      terms: false,
+      customerType:'1',
+      description:'This is set value in Forms'
+
+    }
+    formValue.setValue(userDetails);
+  }
 }

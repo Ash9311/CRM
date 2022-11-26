@@ -15,6 +15,7 @@ import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component'; 
 import { UsersModule } from './users/users.module';
+import {HttpClientModule} from '@angular/common/http'
   
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { UsersModule } from './users/users.module';
     BrowserModule,
     AppRoutingModule ,
     FormsModule,
+    HttpClientModule,
     UsersModule
   ],
   providers: [

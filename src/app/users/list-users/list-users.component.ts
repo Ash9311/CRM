@@ -8,11 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ListUsersComponent implements OnInit {
 
   constructor() { }
-
+user = {}
   taxVal:number = 30;
   surname:string = "mulky"
   updatedUsers(event: any){
     console.log(event);
+    this.user = event;
     
 
   }

@@ -1,3 +1,5 @@
 <p>list-users works!</p>
 <app-filter-users [name]="surname" [tax]="taxVal" (updatedList)="updatedUsers($event)"></app-filter-users>
 <!-- data is being passed from list to filter -->
+<h3>Data received from child</h3>
+{{user | json}}

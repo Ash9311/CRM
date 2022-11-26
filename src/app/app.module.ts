@@ -12,7 +12,9 @@ import { AddLoansComponent } from './add-loans/add-loans.component';
 import { ProductComponent } from './product/product.component';
 import { ClientsComponent } from './clients/clients.component';
 import { SearchComponent } from './search/search.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component'; 
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeaderComponent } from './header/header.component'; 
+import { UsersModule } from './users/users.module';
   
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AdminComponent,
     SearchComponent,
     PageNotFoundComponent,
+    HeaderComponent,
 
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule ,
-    FormsModule
+    FormsModule,
+    UsersModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }

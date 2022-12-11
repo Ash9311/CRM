@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHandler, HttpHeaders, HttpParams } from '@angular/common/http';
 
@@ -12,6 +13,19 @@ interface User{
 export class UsersService {
 
   constructor(private http: HttpClient) { }
+
+
+
+  deleteUser(id: any): Observable<User>{
+    const deleteHeaders = new HttpHeaders({
+        'authenticationToken': 'User1234',
+        'expiryToken': '15'
+    });
+    const deleteParams = new HttpParams().set('userRole','admin');
+
+    return this.http.delete<User>('https://jsonplaceholder.typicode.com/users/'+id,{headers: deleteHeaders,params:deleteParams});
+  }
+
 
   updateUser(){
 

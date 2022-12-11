@@ -13,6 +13,23 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
+  updateUser(){
+
+    const putHeaders = new HttpHeaders({
+      'content-type':'application/json',
+      'authenticationToken':'3124',
+      'userId':'testinguser'
+    })
+    const putParams = new HttpParams().set('userId','testingUser');
+
+    const putBody = {
+      name:'Ash',
+      userId: 1
+    };
+    return this.http.put('https://jsonplaceholder.typicode.com/users/1',putBody,{headers: putHeaders,params:putParams});
+  }
+
+
   getUsers(){
     const headers = new HttpHeaders({
       'content-type':'application/json',

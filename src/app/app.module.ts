@@ -1,3 +1,4 @@
+import { CommonInterceptor } from './common.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AdminComponent } from './admin/admin.component';
@@ -15,7 +16,7 @@ import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component'; 
 import { UsersModule } from './users/users.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
   import {CustomersModule} from './customers/customers.module';
   import {CustomerComponent} from './customers/customer/customer.component';
 @NgModule({
@@ -43,7 +44,8 @@ import {HttpClientModule} from '@angular/common/http';
     UsersModule
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    {provide: HTTP_INTERCEPTORS,useClass: CommonInterceptor,multi: true}
   ],
   bootstrap: [AppComponent]
 })

@@ -45,14 +45,14 @@ export class UsersService {
 
 
   getUsers(){
-    const headers = new HttpHeaders({
-      'content-type':'application/json',
-      'authenticationToken':'123'
-    });
+    // const headers = new HttpHeaders({
+    //   'content-type':'application/json',
+    //   'authenticationToken':'123'
+    // });
 
     const params = new HttpParams().set('pageNum',10).set('pagesize','100');
 
-    return this.http.get<User>('https://jsonplaceholder.typicode.com/users',{headers:headers,params:params});
+    return this.http.get<User>('https://jsonplaceholder.typicode.com/users',{params:params});
 
     //return this.http.get('http://your-api-endpoint');
     // const users = [

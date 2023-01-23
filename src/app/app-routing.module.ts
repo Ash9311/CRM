@@ -20,6 +20,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoansComponent } from './loans/loans.component';
 import { leadingComment } from '@angular/compiler';
 import { SuperAdminGuard } from './super-admin.guard';
+import { ViewUsersComponent } from './users/view-users/view-users.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,11 @@ const routes: Routes = [
       path: 'add-loan',component: AddLoansComponent
     }
   ]
+},
+{
+  path: 'view-users',
+  component: ViewUsersComponent,
+  canDeactivate: [UnsavedGuard]
 },
 {
   path: 'search',

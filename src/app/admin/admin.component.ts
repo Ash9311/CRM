@@ -6,6 +6,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
+
 export class AdminComponent implements OnInit {
   firstname:string = "a";
   
